@@ -1,0 +1,812 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Reading design: md5.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "md5.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "md5"
+Output Format                      : NGC
+Target Device                      : xc6slx45-2-csg484
+
+---- Source Options
+Top Module Name                    : md5
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/jsk_027/Downloads/md5_prj/md5.v" into library work
+Parsing module <md5>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <md5>.
+WARNING:HDLCompiler:413 - "/home/jsk_027/Downloads/md5_prj/md5.v" Line 85: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/jsk_027/Downloads/md5_prj/md5.v" Line 90: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "/home/jsk_027/Downloads/md5_prj/md5.v" Line 103: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "/home/jsk_027/Downloads/md5_prj/md5.v" Line 104: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/jsk_027/Downloads/md5_prj/md5.v" Line 359: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "/home/jsk_027/Downloads/md5_prj/md5.v" Line 360: Result of 7-bit expression is truncated to fit in 6-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <md5>.
+    Related source file is "/home/jsk_027/Downloads/md5_prj/md5.v".
+    Found 128-bit register for signal <n0231[127:0]>.
+    Found 7-bit register for signal <k>.
+    Found 6-bit register for signal <j>.
+    Found 128-bit register for signal <digest>.
+    Found 1-bit register for signal <valid>.
+    Found 128-bit register for signal <n0230[127:0]>.
+    Found 4-bit register for signal <n_s>.
+    Found 128-bit register for signal <out>.
+    Found 32-bit register for signal <F_res>.
+    Found 128-bit register for signal <next_word>.
+    Found 2-bit register for signal <round>.
+    Found 4-bit register for signal <phase>.
+    Found 128-bit register for signal <word>.
+    Found 5-bit register for signal <S>.
+    Found 32-bit register for signal <T>.
+    Found 4-bit register for signal <K>.
+    Found 32-bit register for signal <a>.
+    Found 32-bit register for signal <b>.
+    Found 512-bit register for signal <n0225[511:0]>.
+    Found 512-bit register for signal <padded_message>.
+    Found 6-bit register for signal <len>.
+    Found 8-bit register for signal <total_len>.
+    Found finite state machine <FSM_0> for signal <n_s>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 15                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | 0001                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 7-bit subtractor for signal <GND_1_o_GND_1_o_sub_122_OUT> created at line 313.
+    Found 6-bit adder for signal <len[5]_GND_1_o_add_3_OUT> created at line 85.
+    Found 7-bit adder for signal <n0284> created at line 101.
+    Found 7-bit adder for signal <n0302> created at line 102.
+    Found 7-bit adder for signal <k[6]_GND_1_o_add_91_OUT> created at line 103.
+    Found 32-bit adder for signal <n0452> created at line 312.
+    Found 32-bit adder for signal <n0455> created at line 312.
+    Found 32-bit adder for signal <F_res[31]_T[31]_add_119_OUT> created at line 312.
+    Found 32-bit adder for signal <b[31]_F_res[31]_add_124_OUT> created at line 313.
+    Found 2-bit adder for signal <round[1]_GND_1_o_add_127_OUT> created at line 321.
+    Found 4-bit adder for signal <phase[3]_GND_1_o_add_132_OUT> created at line 329.
+    Found 32-bit adder for signal <next_word[127]_GND_1_o_add_137_OUT> created at line 336.
+    Found 32-bit adder for signal <next_word[95]_PWR_1_o_add_138_OUT> created at line 337.
+    Found 32-bit adder for signal <next_word[63]_PWR_1_o_add_139_OUT> created at line 338.
+    Found 32-bit adder for signal <next_word[31]_GND_1_o_add_140_OUT> created at line 339.
+    Found 7-bit adder for signal <k[6]_GND_1_o_add_152_OUT> created at line 359.
+    Found 6-bit adder for signal <j[5]_GND_1_o_add_153_OUT> created at line 360.
+    Found 9-bit subtractor for signal <GND_1_o_GND_1_o_sub_117_OUT<8:0>> created at line 312.
+    Found 992-bit shifter logical right for signal <n0345> created at line 312
+    Found 32-bit shifter logical left for signal <F_res[31]_S[4]_shift_left_120_OUT> created at line 313
+    Found 32-bit shifter logical right for signal <F_res[31]_GND_1_o_shift_right_122_OUT> created at line 313
+    Found 64x8-bit dual-port RAM <Mram_message> for signal <message>.
+    Found 16x5-bit Read Only RAM for signal <round[1]_PWR_1_o_wide_mux_114_OUT>
+    Found 64x36-bit Read Only RAM for signal <_n0938>
+    Found 32-bit 4-to-1 multiplexer for signal <round[1]_word[63]_wide_mux_111_OUT> created at line 123.
+    Found 32-bit 4-to-1 multiplexer for signal <n0428> created at line 355.
+    Found 6-bit comparator greater for signal <j[5]_GND_1_o_LessThan_12_o> created at line 97
+    Found 6-bit comparator lessequal for signal <n0069> created at line 102
+    Found 7-bit comparator greater for signal <k[6]_GND_1_o_LessThan_142_o> created at line 353
+    Found 7-bit comparator lessequal for signal <n0157> created at line 355
+    Found 6-bit comparator equal for signal <_n0497> created at line 56
+    Found 6-bit comparator equal for signal <_n0503> created at line 56
+    Found 6-bit comparator equal for signal <_n0509> created at line 56
+    Found 6-bit comparator equal for signal <_n0515> created at line 56
+    Summary:
+	inferred   6 RAM(s).
+	inferred  18 Adder/Subtractor(s).
+	inferred 1963 D-type flip-flop(s).
+	inferred   8 Comparator(s).
+	inferred  98 Multiplexer(s).
+	inferred   3 Combinational logic shifter(s).
+	inferred   1 Finite State Machine(s).
+Unit <md5> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 6
+ 16x5-bit single-port Read Only RAM                    : 1
+ 64x36-bit single-port Read Only RAM                   : 1
+ 64x8-bit dual-port RAM                                : 4
+# Adders/Subtractors                                   : 18
+ 2-bit adder                                           : 1
+ 32-bit adder                                          : 8
+ 4-bit adder                                           : 1
+ 6-bit adder                                           : 2
+ 7-bit adder                                           : 4
+ 7-bit subtractor                                      : 1
+ 9-bit subtractor                                      : 1
+# Registers                                            : 21
+ 1-bit register                                        : 1
+ 128-bit register                                      : 6
+ 2-bit register                                        : 1
+ 32-bit register                                       : 4
+ 4-bit register                                        : 2
+ 5-bit register                                        : 1
+ 512-bit register                                      : 2
+ 6-bit register                                        : 2
+ 7-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 8
+ 6-bit comparator equal                                : 4
+ 6-bit comparator greater                              : 1
+ 6-bit comparator lessequal                            : 1
+ 7-bit comparator greater                              : 1
+ 7-bit comparator lessequal                            : 1
+# Multiplexers                                         : 98
+ 1-bit 2-to-1 multiplexer                              : 4
+ 128-bit 2-to-1 multiplexer                            : 2
+ 2-bit 2-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 6
+ 32-bit 4-to-1 multiplexer                             : 2
+ 4-bit 2-to-1 multiplexer                              : 2
+ 6-bit 2-to-1 multiplexer                              : 3
+ 7-bit 2-to-1 multiplexer                              : 5
+ 8-bit 2-to-1 multiplexer                              : 73
+# Logic shifters                                       : 3
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+ 992-bit shifter logical right                         : 1
+# FSMs                                                 : 1
+# Xors                                                 : 3
+ 32-bit xor2                                           : 3
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1293 - FF/Latch <padded_message_63> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_62> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_61> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_60> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_59> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_58> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_57> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_56> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_55> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_54> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_53> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_52> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_51> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_50> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_49> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_48> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_47> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_46> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_45> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_44> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_43> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_42> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_41> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_40> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <total_len_2> (without init value) has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <total_len_1> (without init value) has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <total_len_0> (without init value) has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_34> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_33> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_32> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <md5>.
+The following registers are absorbed into counter <round>: 1 register on signal <round>.
+The following registers are absorbed into counter <len>: 1 register on signal <len>.
+	The following adders/subtractors are grouped into adder tree <Madd_F_res[31]_T[31]_add_119_OUT1> :
+ 	<Madd_n0452> in block <md5>, 	<Madd_n0455> in block <md5>, 	<Madd_F_res[31]_T[31]_add_119_OUT> in block <md5>.
+INFO:Xst:3231 - The small RAM <Mram_message> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 8-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <len>           |          |
+    |     diA            | connected to signal <(_n0971,_n0969<2:8>)> |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 64-word x 8-bit                     |          |
+    |     addrB          | connected to signal <k<5:0>>        |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_round[1]_PWR_1_o_wide_mux_114_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 5-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(round,phase<1:0>)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_message1> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 8-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <len>           |          |
+    |     diA            | connected to signal <(_n0971,_n0969<2:8>)> |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 64-word x 8-bit                     |          |
+    |     addrB          | connected to signal <k[6]_GND_1_o_add_152_OUT<5:0>> |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_message2> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 8-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <len>           |          |
+    |     diA            | connected to signal <(_n0971,_n0969<2:8>)> |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 64-word x 8-bit                     |          |
+    |     addrB          | connected to signal <n0284>         |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_message3> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 8-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <len>           |          |
+    |     diA            | connected to signal <(_n0971,_n0969<2:8>)> |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 64-word x 8-bit                     |          |
+    |     addrB          | connected to signal <n0302>         |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0938> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 36-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(round,phase)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <md5> synthesized (advanced).
+WARNING:Xst:2677 - Node <group_0_448> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_449> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_450> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_451> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_452> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_453> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_454> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_455> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_456> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_457> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_458> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_459> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_460> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_461> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_462> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_463> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_464> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_465> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_466> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_467> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_468> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_469> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_470> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_471> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_472> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_473> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_474> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_475> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_476> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_477> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_478> of sequential type is unconnected in block <md5>.
+WARNING:Xst:2677 - Node <group_0_479> of sequential type is unconnected in block <md5>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 6
+ 16x5-bit single-port distributed Read Only RAM        : 1
+ 64x36-bit single-port distributed Read Only RAM       : 1
+ 64x8-bit dual-port distributed RAM                    : 4
+# Adders/Subtractors                                   : 13
+ 32-bit adder                                          : 5
+ 4-bit adder                                           : 1
+ 6-bit adder                                           : 3
+ 7-bit adder                                           : 2
+ 7-bit subtractor                                      : 1
+ 9-bit subtractor                                      : 1
+# Adder Trees                                          : 1
+ 32-bit / 4-inputs adder tree                          : 1
+# Counters                                             : 2
+ 2-bit up counter                                      : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 1923
+ Flip-Flops                                            : 1923
+# Comparators                                          : 8
+ 6-bit comparator equal                                : 4
+ 6-bit comparator greater                              : 1
+ 6-bit comparator lessequal                            : 1
+ 7-bit comparator greater                              : 1
+ 7-bit comparator lessequal                            : 1
+# Multiplexers                                         : 217
+ 1-bit 2-to-1 multiplexer                              : 132
+ 128-bit 2-to-1 multiplexer                            : 2
+ 32-bit 2-to-1 multiplexer                             : 2
+ 32-bit 4-to-1 multiplexer                             : 2
+ 4-bit 2-to-1 multiplexer                              : 2
+ 6-bit 2-to-1 multiplexer                              : 3
+ 7-bit 2-to-1 multiplexer                              : 5
+ 8-bit 2-to-1 multiplexer                              : 69
+# Logic shifters                                       : 3
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+ 992-bit shifter logical right                         : 1
+# FSMs                                                 : 1
+# Xors                                                 : 3
+ 32-bit xor2                                           : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <padded_message_63> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_62> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_61> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_60> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_59> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_58> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_57> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_56> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_55> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_54> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_53> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_52> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_51> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_50> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_49> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_48> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_47> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_46> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_45> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_44> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_43> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_42> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_41> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_40> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <total_len_2> (without init value) has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <total_len_1> (without init value) has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <total_len_0> (without init value) has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_34> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_33> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <padded_message_32> has a constant value of 0 in block <md5>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <n_s[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+ 1001  | 1001
+ 1010  | 1010
+-------------------
+
+Optimizing unit <md5> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block md5, actual ratio is 11.
+FlipFlop K_0 has been replicated 1 time(s)
+FlipFlop K_1 has been replicated 1 time(s)
+FlipFlop K_2 has been replicated 6 time(s)
+FlipFlop K_3 has been replicated 7 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1920
+ Flip-Flops                                            : 1920
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : md5.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 2143
+#      GND                         : 1
+#      INV                         : 67
+#      LUT1                        : 60
+#      LUT2                        : 298
+#      LUT3                        : 101
+#      LUT4                        : 107
+#      LUT5                        : 688
+#      LUT6                        : 356
+#      MUXCY                       : 215
+#      MUXF7                       : 27
+#      VCC                         : 1
+#      XORCY                       : 222
+# FlipFlops/Latches                : 1920
+#      FD                          : 4
+#      FDE                         : 1916
+# RAMS                             : 16
+#      RAM64M                      : 8
+#      RAM64X1D                    : 8
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 138
+#      IBUF                        : 9
+#      OBUF                        : 129
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg484-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1920  out of  54576     3%  
+ Number of Slice LUTs:                 1725  out of  27288     6%  
+    Number used as Logic:              1677  out of  27288     6%  
+    Number used as Memory:               48  out of   6408     0%  
+       Number used as RAM:               48
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   2501
+   Number with an unused Flip Flop:     581  out of   2501    23%  
+   Number with an unused LUT:           776  out of   2501    31%  
+   Number of fully used LUT-FF pairs:  1144  out of   2501    45%  
+   Number of unique control sets:        18
+
+IO Utilization: 
+ Number of IOs:                         139
+ Number of bonded IOBs:                 139  out of    320    43%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1936  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 13.222ns (Maximum Frequency: 75.629MHz)
+   Minimum input arrival time before clock: 10.575ns
+   Maximum output required time after clock: 4.118ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 13.222ns (frequency: 75.629MHz)
+  Total number of paths / destination ports: 475273840 / 3996
+-------------------------------------------------------------------------
+Delay:               13.222ns (Levels of Logic = 66)
+  Source:            K_2_5 (FF)
+  Destination:       word_95 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: K_2_5 to word_95
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             14   0.525   1.235  K_2_5 (K_2_5)
+     LUT6:I4->O            1   0.250   0.958  Sh46401 (Sh46401)
+     LUT6:I2->O            1   0.254   0.682  Sh46405 (Sh4640)
+     LUT2:I1->O            1   0.254   0.000  ADDERTREE_INTERNAL_Madd1_lut<0> (ADDERTREE_INTERNAL_Madd1_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  ADDERTREE_INTERNAL_Madd1_cy<0> (ADDERTREE_INTERNAL_Madd1_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<1> (ADDERTREE_INTERNAL_Madd1_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<2> (ADDERTREE_INTERNAL_Madd1_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<3> (ADDERTREE_INTERNAL_Madd1_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<4> (ADDERTREE_INTERNAL_Madd1_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<5> (ADDERTREE_INTERNAL_Madd1_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<6> (ADDERTREE_INTERNAL_Madd1_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<7> (ADDERTREE_INTERNAL_Madd1_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<8> (ADDERTREE_INTERNAL_Madd1_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<9> (ADDERTREE_INTERNAL_Madd1_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<10> (ADDERTREE_INTERNAL_Madd1_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<11> (ADDERTREE_INTERNAL_Madd1_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<12> (ADDERTREE_INTERNAL_Madd1_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<13> (ADDERTREE_INTERNAL_Madd1_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<14> (ADDERTREE_INTERNAL_Madd1_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<15> (ADDERTREE_INTERNAL_Madd1_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<16> (ADDERTREE_INTERNAL_Madd1_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<17> (ADDERTREE_INTERNAL_Madd1_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<18> (ADDERTREE_INTERNAL_Madd1_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<19> (ADDERTREE_INTERNAL_Madd1_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<20> (ADDERTREE_INTERNAL_Madd1_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<21> (ADDERTREE_INTERNAL_Madd1_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<22> (ADDERTREE_INTERNAL_Madd1_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<23> (ADDERTREE_INTERNAL_Madd1_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  ADDERTREE_INTERNAL_Madd1_cy<24> (ADDERTREE_INTERNAL_Madd1_cy<24>)
+     XORCY:CI->O           2   0.206   0.726  ADDERTREE_INTERNAL_Madd1_xor<25> (ADDERTREE_INTERNAL_Madd_251)
+     LUT3:I2->O            1   0.254   0.682  ADDERTREE_INTERNAL_Madd225 (ADDERTREE_INTERNAL_Madd225)
+     LUT4:I3->O            1   0.254   0.000  ADDERTREE_INTERNAL_Madd2_lut<0>26 (ADDERTREE_INTERNAL_Madd2_lut<0>26)
+     MUXCY:S->O            1   0.215   0.000  ADDERTREE_INTERNAL_Madd2_cy<0>_25 (ADDERTREE_INTERNAL_Madd2_cy<0>26)
+     XORCY:CI->O           9   0.206   1.252  ADDERTREE_INTERNAL_Madd2_xor<0>_26 (ADDERTREE_INTERNAL_Madd_272)
+     LUT6:I2->O            1   0.254   0.000  n0459<3>71_F (N285)
+     MUXF7:I0->O           3   0.163   0.766  n0459<3>71 (n0459<3>_bdd2)
+     LUT5:I4->O            2   0.254   0.726  n0459<4>41_SW0 (N86)
+     LUT6:I5->O            1   0.254   0.000  Madd_b[31]_F_res[31]_add_124_OUT_lut<4> (Madd_b[31]_F_res[31]_add_124_OUT_lut<4>)
+     MUXCY:S->O            1   0.215   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<4> (Madd_b[31]_F_res[31]_add_124_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<5> (Madd_b[31]_F_res[31]_add_124_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<6> (Madd_b[31]_F_res[31]_add_124_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<7> (Madd_b[31]_F_res[31]_add_124_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<8> (Madd_b[31]_F_res[31]_add_124_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<9> (Madd_b[31]_F_res[31]_add_124_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<10> (Madd_b[31]_F_res[31]_add_124_OUT_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<11> (Madd_b[31]_F_res[31]_add_124_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<12> (Madd_b[31]_F_res[31]_add_124_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<13> (Madd_b[31]_F_res[31]_add_124_OUT_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<14> (Madd_b[31]_F_res[31]_add_124_OUT_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<15> (Madd_b[31]_F_res[31]_add_124_OUT_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<16> (Madd_b[31]_F_res[31]_add_124_OUT_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<17> (Madd_b[31]_F_res[31]_add_124_OUT_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<18> (Madd_b[31]_F_res[31]_add_124_OUT_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<19> (Madd_b[31]_F_res[31]_add_124_OUT_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<20> (Madd_b[31]_F_res[31]_add_124_OUT_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<21> (Madd_b[31]_F_res[31]_add_124_OUT_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<22> (Madd_b[31]_F_res[31]_add_124_OUT_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<23> (Madd_b[31]_F_res[31]_add_124_OUT_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<24> (Madd_b[31]_F_res[31]_add_124_OUT_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<25> (Madd_b[31]_F_res[31]_add_124_OUT_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<26> (Madd_b[31]_F_res[31]_add_124_OUT_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<27> (Madd_b[31]_F_res[31]_add_124_OUT_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<28> (Madd_b[31]_F_res[31]_add_124_OUT_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<29> (Madd_b[31]_F_res[31]_add_124_OUT_cy<29>)
+     MUXCY:CI->O           0   0.023   0.000  Madd_b[31]_F_res[31]_add_124_OUT_cy<30> (Madd_b[31]_F_res[31]_add_124_OUT_cy<30>)
+     XORCY:CI->O           2   0.206   0.726  Madd_b[31]_F_res[31]_add_124_OUT_xor<31> (b[31]_F_res[31]_add_124_OUT<31>)
+     LUT2:I1->O            1   0.254   0.000  Mmux__n08291231 (_n0829<95>)
+     FDE:D                     0.074          word_95
+    ----------------------------------------
+    Total                     13.222ns (5.469ns logic, 7.753ns route)
+                                       (41.4% logic, 58.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 9489 / 541
+-------------------------------------------------------------------------
+Offset:              10.575ns (Levels of Logic = 7)
+  Source:            data_in<2> (PAD)
+  Destination:       group_0_8 (FF)
+  Destination Clock: clk rising
+
+  Data Path: data_in<2> to group_0_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             8   1.328   1.172  data_in_2_IBUF (data_in_2_IBUF)
+     LUT3:I0->O            1   0.235   0.682  _n0498122_SW0 (N64)
+     LUT6:I5->O            3   0.254   1.196  _n0498122 (n_s_FSM_FFd3-In2)
+     LUT6:I1->O           23   0.254   1.813  _n0498121 (_n049812)
+     LUT6:I0->O            8   0.254   1.220  _n0504121 (_n050412)
+     LUT4:I0->O           15   0.254   1.585  _n0504111 (_n0504_mmx_out1)
+     LUT5:I0->O            1   0.254   0.000  group[15][31]_group[15][31]_mux_93_OUT<40>1 (group[15][31]_group[15][31]_mux_93_OUT<40>)
+     FDE:D                     0.074          group_0_40
+    ----------------------------------------
+    Total                     10.575ns (2.907ns logic, 7.668ns route)
+                                       (27.5% logic, 72.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 129 / 129
+-------------------------------------------------------------------------
+Offset:              4.118ns (Levels of Logic = 1)
+  Source:            digest_127 (FF)
+  Destination:       digest<127> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: digest_127 to digest<127>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.525   0.681  digest_127 (digest_127)
+     OBUF:I->O                 2.912          digest_127_OBUF (digest<127>)
+    ----------------------------------------
+    Total                      4.118ns (3.437ns logic, 0.681ns route)
+                                       (83.5% logic, 16.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   13.222|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 27.00 secs
+Total CPU time to Xst completion: 27.31 secs
+ 
+--> 
+
+
+Total memory usage is 438804 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   98 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+
+
